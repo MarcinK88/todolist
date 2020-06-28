@@ -19,7 +19,7 @@ function saveTodo(e) {
 
         const element = document.createElement('Element');
         element.setState({ text: e.target.value });
-        // list.appendChild(document.("test"));
+        list.appendChild(element);
         console.log(list);
 
 
