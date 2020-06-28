@@ -15,10 +15,10 @@ function saveTodo(e) {
 
     if (e.which === 13) {
         console.log(e.target.value);
-        e.target.value = "";
         var list = document.querySelector("#list");
 
-        var element = document.createElement('Element');
+        const element = document.createElement('Element');
+        element.setState({ text: e.target.value });
         // list.appendChild(document.("test"));
         console.log(list);
 
