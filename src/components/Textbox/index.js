@@ -7,8 +7,10 @@ export default function Textbox(props) {
     return (
         <div id="list">
             <form onSubmit={props.saveTodo}>
-            <input type="text" />
-            <button type="submit" >send</button>
+                <div className="form-group">
+                    <input type="text" placeholder="add task" />
+                    <button type="submit" className="btn btn-primary" >add task</button>
+                </div>
             </form>
         </div>
     )

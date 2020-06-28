@@ -15,31 +15,36 @@ function App() {
         e.currentTarget.elements[0].value
       ]);
 
-    console.log(todolist);
 
+    e.currentTarget.elements[0].value = '';
   }
 
   const deleteElement = (e) => {
     console.log(e.target.id);
     todolist.splice(e.target.id, 1);
-    showList();
+    setTodolist(
+      [
+        ...todolist
+      ]
+    )
 
   }
 
   const showList = function () {
     return (
       <div>
-        {todolist.map((txt, index) => <Element id={index} text={txt} delete={deleteElement} />)}
+        <table className="table table-striped table-bordered">
+          {todolist.map((txt, index) => <Element id={index} text={txt} delete={deleteElement} />)}
+        </table>
+
       </div>
     )
   }
 
-
-
   return (
     <div>
       <div className="card text-center">
-        <div className="card-header font-weight-bold">
+        <div className="card-header font-weight-bold todoList">
           Todo List
        </div>
         <div className="card-body">
@@ -47,8 +52,9 @@ function App() {
           {/* {todolist.map((element) => <Element {...element} />)} */}
 
           {/* {todolist.map((txt, index) => <Element id={index} text={txt} delete={deleteElement} />)} */}
-          {showList()}
-
+          <div className="todoList">
+            {showList()}
+          </div>
           {/* <div>{todolist.map(item  => { return {...item}}  )}</div> */}
           {/* <Element /> */}
         </div>
