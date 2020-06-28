@@ -6,24 +6,14 @@ export default function Textbox() {
 
     return (
         <div id="list">
-            <input type="text" onKeyDown={saveTodo} />
+            <form onSubmit={saveTodo}>
+            <input type="text" />
+            </form>
         </div>
     )
 }
 
-function saveTodo(e) {
 
-    if (e.which === 13) {
-        console.log(e.target.value);
-        var list = document.querySelector("#list");
-
-        const element = document.createElement('Element');
-        element.setState({ text: e.target.value });
-        list.appendChild(element);
-        console.log(list);
-
-
-    }
 
     // console.log(list);
     // list.appendChild(element);
