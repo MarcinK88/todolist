@@ -1,21 +1,15 @@
 import React from 'react';
 import Element from '.././Element';
 
-export default function Textbox() {
+export default function Textbox(props) {
 
 
     return (
         <div id="list">
-            <form onSubmit={saveTodo}>
+            <form onSubmit={props.saveTodo}>
             <input type="text" />
+            <button type="submit" >send</button>
             </form>
         </div>
     )
-}
-
-
-
-    // console.log(list);
-    // list.appendChild(element);
-
 }

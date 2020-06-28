@@ -1,18 +1,11 @@
 import React from 'react';
 
-export default class Element extends React.Component {
+export default function Element(props) {
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            text: ''
-        }
-    }
-
-    render() {
+    
         return (
-            <div>{this.state.text}</div>
+            <div>{props.element}</div>
         )
-    }
+    
 
 }

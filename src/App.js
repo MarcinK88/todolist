@@ -7,14 +7,21 @@ import Element from './components/Element';
 function App() {
   const [todolist, setTodolist] = useState([]);
   const saveTodo = (e) => {
+    e.preventDefault();
     setTodolist(
     [
       ...todolist,
-      'tu bedzie trzeba cos dodac (nowy elelemt)'
+      e.currentTarget.elements[0].value
     ] );
-    // setTodolist(todolist.push('tu cos dodac'));
-    console.log(e);
+
+    console.log(todolist);
+    
   }
+
+  
+
+
+
   return (
     <div>
       <div className="card text-center">
@@ -23,7 +30,11 @@ function App() {
        </div>
        <div className="card-body">
          <Textbox saveTodo={saveTodo} />
-         {todolist.map((element) => <Element {...element} />)}
+         {/* {todolist.map((element) => <Element {...element} />)} */}
+          <ul>
+         {todolist.map((txt, index) => <li id={index}> {txt}</li>)}
+         </ul>
+         {/* <div>{todolist.map(item  => { return {...item}}  )}</div> */}
          {/* <Element /> */}
        </div>
       </div>
